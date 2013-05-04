@@ -16,7 +16,7 @@ $(document).ready(function(){
  // s1.volume.gain.value=0.2;
     $.getJSON("data/paramlist100.txt",function(data){
         $.each(data, function(key, val){
-           setTimeout(function(){process_data(val)},key*100);
+           setTimeout(function(){process_data(val)},key*125);
         });
     });
 
@@ -24,8 +24,8 @@ $(document).ready(function(){
     function process_data(val){
         var osc1 = remap(val.osc1, 0,100, 30,40);
         var osc2 = remap(val.osc2, 0,100, 30,40);
-        var amp1 = remap(val.amp1, 0,100, 0,1);
-        var amp2 = remap(val.amp1, 0,100, 0,1);
+        var amp1 = remap(val.amp1, 0,100, 0,0.5);
+        var amp2 = remap(val.amp1, 0,100, 0,0.5);
 
         s1.source.frequency.value = osc1;
         s2.source.frequency.value = osc2;
